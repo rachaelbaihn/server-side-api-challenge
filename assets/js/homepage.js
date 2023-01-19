@@ -10,11 +10,12 @@ function searchCity (){
   getCityDetails(cityName);
 };
 
-var btnList = $("#Austin-btn");
+var btnList = $(".list-btn");
 btnList.on("click",searchListCity)
 
 function searchListCity (){
-  cityName = inputListCity.val();
+  var button = $(this)
+  cityName = button.text();
   getCityDetails(cityName);
 };
 
