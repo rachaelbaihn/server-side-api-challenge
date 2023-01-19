@@ -1,3 +1,4 @@
+var api = "52c6469b398b5f89ec8e095a4887f7db"
 var cityName = "Atlanta";
 getCityDetails(cityName);
 
@@ -10,7 +11,7 @@ function searchCity (){
   getCityDetails(cityName);
 };
 
-var btnList = $(".list-btn");
+var btnList = $(".btn");
 btnList.on("click",searchListCity)
 
 function searchListCity (){
@@ -49,7 +50,7 @@ function mainCityInfo (temperature, wind, humidity, date, temperatureOne, windOn
 }
 
 function getWeatherData (lat, lon) {
-  var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=52c6469b398b5f89ec8e095a4887f7db';
+  var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + api;
 
   fetch(apiUrl)
     .then(function (response) {
@@ -96,7 +97,7 @@ function getWeatherData (lat, lon) {
   }
 
   function getCityDetails (cityName){
-  var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=52c6469b398b5f89ec8e095a4887f7db';
+  var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=' + api;
 
     fetch(apiUrl)
       .then(function (response) {
